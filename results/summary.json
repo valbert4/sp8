@@ -1,0 +1,141 @@
+{
+  "ambient_group": "Sp(8,2)",
+  "ambient_order": 47377612800,
+  "detail_prefix_counts": {
+    "detail_v3": 650863,
+    "empty": 6144
+  },
+  "distinct_orders": 281,
+  "failure_checks": {
+    "failed_jobs_jsonl_exists": false,
+    "failed_jobs_lines": 0,
+    "live_merge_task_dirs": 0,
+    "raw_failed_markers": 0
+  },
+  "generated_at": "2026-06-03T21:05:19.637685+00:00",
+  "incidence": {
+    "bad_incidence_lines": 0,
+    "children_with_incidence": 657006,
+    "incidence_line_count": 15505210
+  },
+  "job_class_counts": {
+    "heavy": 2,
+    "light": 657004,
+    "root": 1
+  },
+  "latest_snapshot": {
+    "name": "progress_003498.json",
+    "payload": {
+      "frontier_ids": [],
+      "full_payload": false,
+      "job_class_counts": {
+        "heavy": 2,
+        "light": 657004,
+        "root": 1
+      },
+      "latest_full_snapshot_id": 637,
+      "raw_child_backlog": 0,
+      "reason": "run_round_merge_only_new_0",
+      "representative_count": 657007,
+      "schema_version": 1,
+      "snapshot_id": 3498,
+      "status_counts": {
+        "processed": 657007
+      },
+      "written_at": "2026-06-03T19:08:21.460128+00:00"
+    }
+  },
+  "notes": [
+    "Classification is by ambient Sp(8,2)-conjugacy class of subgroups.",
+    "The total number of actual subgroups was not enumerated for Sp(8,2).",
+    "Full representative files are intentionally not copied into the result directory."
+  ],
+  "representation": "faithful degree-120 permutation representation",
+  "representative_count": 657007,
+  "run_dir": "scripts/work_sp8/run_20260527_130624",
+  "status_counts": {
+    "processed": 657007
+  },
+  "top_orders": [
+    [
+      128,
+      152415
+    ],
+    [
+      256,
+      135501
+    ],
+    [
+      64,
+      117527
+    ],
+    [
+      512,
+      83862
+    ],
+    [
+      32,
+      49818
+    ],
+    [
+      1024,
+      37185
+    ],
+    [
+      2048,
+      14084
+    ],
+    [
+      16,
+      10843
+    ],
+    [
+      384,
+      7345
+    ],
+    [
+      192,
+      7111
+    ],
+    [
+      768,
+      5744
+    ],
+    [
+      4096,
+      4853
+    ],
+    [
+      96,
+      4610
+    ],
+    [
+      1536,
+      4450
+    ],
+    [
+      3072,
+      3254
+    ],
+    [
+      48,
+      2367
+    ],
+    [
+      6144,
+      1400
+    ],
+    [
+      8,
+      1231
+    ],
+    [
+      8192,
+      1195
+    ],
+    [
+      576,
+      893
+    ]
+  ]
+}

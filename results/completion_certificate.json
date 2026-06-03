@@ -1,0 +1,61 @@
+{
+  "ambient_group": "Sp(8,2)",
+  "ambient_order": 47377612800,
+  "completion_claim": {
+    "all_representatives_processed": true,
+    "frontier_empty": true,
+    "incidence_parse_clean": true,
+    "no_failed_jobs": true,
+    "no_failed_raw_child_markers": true,
+    "no_live_merge_task_dirs": true,
+    "raw_child_backlog_zero": true
+  },
+  "conjugacy_classes": 657007,
+  "detail_prefix_counts": {
+    "detail_v3": 650863,
+    "empty": 6144
+  },
+  "failure_checks": {
+    "failed_jobs_jsonl_exists": false,
+    "failed_jobs_lines": 0,
+    "live_merge_task_dirs": 0,
+    "raw_failed_markers": 0
+  },
+  "generated_at": "2026-06-03T21:05:19.637685+00:00",
+  "incidence": {
+    "bad_incidence_lines": 0,
+    "children_with_incidence": 657006,
+    "incidence_line_count": 15505210
+  },
+  "job_class_counts": {
+    "heavy": 2,
+    "light": 657004,
+    "root": 1
+  },
+  "latest_snapshot": {
+    "name": "progress_003498.json",
+    "payload": {
+      "frontier_ids": [],
+      "full_payload": false,
+      "job_class_counts": {
+        "heavy": 2,
+        "light": 657004,
+        "root": 1
+      },
+      "latest_full_snapshot_id": 637,
+      "raw_child_backlog": 0,
+      "reason": "run_round_merge_only_new_0",
+      "representative_count": 657007,
+      "schema_version": 1,
+      "snapshot_id": 3498,
+      "status_counts": {
+        "processed": 657007
+      },
+      "written_at": "2026-06-03T19:08:21.460128+00:00"
+    }
+  },
+  "representation": "faithful degree-120 permutation representation",
+  "status_counts": {
+    "processed": 657007
+  }
+}

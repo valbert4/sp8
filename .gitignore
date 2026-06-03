@@ -1,0 +1,26 @@
+# Python cache and local tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.DS_Store
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# Local virtual environments
+.venv/
+venv/
+env/
+
+# Large Sp(8,2) calculation state. This contains representative GAP files,
+# representative JSON records, raw child jobs, snapshots, caches, and logs.
+scripts/work_sp8/
+
+# Local paper-note shortcut file.
+scripts/archive_sp8_run.sh
+scripts/archive_sp8_status.sh
