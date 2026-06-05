@@ -25,6 +25,31 @@ The exporter writes summaries to `results/`. When regenerating from archived run
 data, pass `--run-dir` explicitly to point at the external restored run
 directory.
 
+## Export Matrix Generators
+
+The classified subgroup representatives are stored as degree-120 permutation
+groups in the archived run data. To export their faithful 8x8 GF(2) symplectic
+generators in compact binary shards:
+
+```sh
+python3 scripts/export_matrix_generators.py \
+	--run-dir /path/to/restored-or-local-run \
+	--out-dir results/matrix_generators
+```
+
+The exporter writes one `.bin` payload and one `.index.tsv` file per shard.
+Use the reader/verifier to inspect or audit the export:
+
+```sh
+python3 scripts/read_matrix_generators.py \
+	--matrix-dir results/matrix_generators \
+	show 1
+
+python3 scripts/read_matrix_generators.py \
+	--matrix-dir results/matrix_generators \
+	verify --run-dir /path/to/restored-or-local-run --sample 25
+```
+
 ## Archive a Completed Run
 
 To archive a completed run into large, reproducible tarballs and publish them to

@@ -10,6 +10,7 @@ __pycache__/
 # Logs and temporary files
 *.log
 *.tmp
+*.gap.tsv
 *.bak
 
 # Local virtual environments
@@ -24,3 +25,7 @@ scripts/work_sp8/
 # Local paper-note shortcut file.
 scripts/archive_sp8_run.sh
 scripts/archive_sp8_status.sh
+
+# Matrix-generator export scratch files. Completed shard .bin/.index.tsv files
+# are intentionally not ignored; they are the compact publishable artifacts.
+results/matrix_generators/*.tmp

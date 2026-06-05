@@ -34,6 +34,27 @@ ambient conjugacy in `Sp(8,2)`.
 - [`orbit_pattern_counts.tsv`](orbit_pattern_counts.tsv): orbit-length patterns in the degree-120 action.
 - [`completion_certificate.json`](completion_certificate.json): machine-readable final snapshot and health checks.
 
+## Matrix Generators
+
+The permutation representatives can be converted to faithful 8x8 GF(2)
+symplectic matrix generators with:
+
+```sh
+python3 scripts/export_matrix_generators.py \
+  --run-dir /path/to/restored-or-local-run \
+  --out-dir results/matrix_generators
+```
+
+The compact export uses binary matrix shards plus TSV indexes. It is designed to
+be publishable in this repository while the original representative files remain
+in the external run archive. The companion reader and verifier are:
+
+```sh
+python3 scripts/read_matrix_generators.py --matrix-dir results/matrix_generators info
+python3 scripts/read_matrix_generators.py --matrix-dir results/matrix_generators verify \
+  --run-dir /path/to/restored-or-local-run --sample 25
+```
+
 ## Largest Order Buckets
 
 | Order | Conjugacy classes |

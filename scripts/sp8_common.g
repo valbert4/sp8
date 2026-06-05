@@ -6,6 +6,10 @@ if not IsBound(DIM) then
     DIM := 8;
 fi;
 
+if not IsBound(SP8_LoadRep) then
+    SP8_LoadRep := fail;
+fi;
+
 SP8_Quote := function(s)
     return Concatenation("\"", String(s), "\"");
 end;
@@ -26,6 +30,54 @@ SP8_BuildContext := function(dim)
     P := Image(iso2);
     phi := CompositionMapping(iso2, iso1);
     return rec(G := G, P := P, phi := phi);
+end;
+
+SP8_LoadRepFromRun := function(P, run_dir, rep_id)
+    Read(Concatenation(run_dir, "/reps/rep_", String(rep_id), ".g"));
+    return SP8_LoadRep(P);
+end;
+
+SP8_HexDigit := function(n)
+    return "0123456789abcdef"[n + 1];
+end;
+
+SP8_PackMatrixHex := function(mat)
+    local out, row, col, nibble, bit, count;
+    out := "";
+    nibble := 0;
+    count := 0;
+    for row in [1..8] do
+        for col in [1..8] do
+            if mat[row][col] = One(GF(2)) then
+                bit := 1;
+            else
+                bit := 0;
+            fi;
+            nibble := 2 * nibble + bit;
+            count := count + 1;
+            if count = 4 then
+                Add(out, SP8_HexDigit(nibble));
+                nibble := 0;
+                count := 0;
+            fi;
+        od;
+    od;
+    return out;
+end;
+
+SP8_PreimageMatrixGenerators := function(ctx, H, use_small_generating_set)
+    local gens;
+    if use_small_generating_set then
+        gens := SmallGeneratingSet(H);
+    else
+        gens := GeneratorsOfGroup(H);
+    fi;
+    gens := Filtered(gens, g -> g <> One(H));
+    return List(gens, g -> PreImagesRepresentative(ctx.phi, g));
+end;
+
+SP8_MatrixGeneratorHexString := function(mats)
+    return JoinStringsWithSeparator(List(mats, SP8_PackMatrixHex), "");
 end;
 
 SP8_OrbitLengths := function(H, degree)

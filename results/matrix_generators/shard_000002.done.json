@@ -1,0 +1,11 @@
+{
+  "bin": "shard_000002.bin",
+  "bytes": 3236672,
+  "end_id": 150000,
+  "generated_at": "2026-06-05T14:36:07.064639+00:00",
+  "index": "shard_000002.index.tsv",
+  "matrices": 404584,
+  "representatives": 50000,
+  "shard": 2,
+  "start_id": 100001
+}

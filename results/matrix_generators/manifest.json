@@ -1,0 +1,178 @@
+{
+  "ambient_group": "Sp(8,2)",
+  "end_id": 657007,
+  "field": "GF(2)",
+  "format": "sp8_matrix_generators_v1",
+  "generated_at": "2026-06-05T14:44:22.050782+00:00",
+  "matrix_dimension": 8,
+  "packing": {
+    "bit_order": "most-significant-bit first within each row byte",
+    "bytes_per_matrix": 8,
+    "order": "row-major"
+  },
+  "run_dir": "scripts/work_sp8/run_20260527_130624",
+  "shard_size": 50000,
+  "shards": [
+    {
+      "bin": "shard_000000.bin",
+      "bytes": 3434888,
+      "end_id": 50000,
+      "generated_at": "2026-06-05T14:34:08.178953+00:00",
+      "index": "shard_000000.index.tsv",
+      "matrices": 429361,
+      "representatives": 50000,
+      "shard": 0,
+      "start_id": 1
+    },
+    {
+      "bin": "shard_000001.bin",
+      "bytes": 3532328,
+      "end_id": 100000,
+      "generated_at": "2026-06-05T14:35:09.901530+00:00",
+      "index": "shard_000001.index.tsv",
+      "matrices": 441541,
+      "representatives": 50000,
+      "shard": 1,
+      "start_id": 50001
+    },
+    {
+      "bin": "shard_000002.bin",
+      "bytes": 3236672,
+      "end_id": 150000,
+      "generated_at": "2026-06-05T14:36:07.064639+00:00",
+      "index": "shard_000002.index.tsv",
+      "matrices": 404584,
+      "representatives": 50000,
+      "shard": 2,
+      "start_id": 100001
+    },
+    {
+      "bin": "shard_000003.bin",
+      "bytes": 3142824,
+      "end_id": 200000,
+      "generated_at": "2026-06-05T14:36:59.180313+00:00",
+      "index": "shard_000003.index.tsv",
+      "matrices": 392853,
+      "representatives": 50000,
+      "shard": 3,
+      "start_id": 150001
+    },
+    {
+      "bin": "shard_000004.bin",
+      "bytes": 3304336,
+      "end_id": 250000,
+      "generated_at": "2026-06-05T14:37:56.604192+00:00",
+      "index": "shard_000004.index.tsv",
+      "matrices": 413042,
+      "representatives": 50000,
+      "shard": 4,
+      "start_id": 200001
+    },
+    {
+      "bin": "shard_000005.bin",
+      "bytes": 3288224,
+      "end_id": 300000,
+      "generated_at": "2026-06-05T14:38:57.072748+00:00",
+      "index": "shard_000005.index.tsv",
+      "matrices": 411028,
+      "representatives": 50000,
+      "shard": 5,
+      "start_id": 250001
+    },
+    {
+      "bin": "shard_000006.bin",
+      "bytes": 2839336,
+      "end_id": 350000,
+      "generated_at": "2026-06-05T14:39:46.503441+00:00",
+      "index": "shard_000006.index.tsv",
+      "matrices": 354917,
+      "representatives": 50000,
+      "shard": 6,
+      "start_id": 300001
+    },
+    {
+      "bin": "shard_000007.bin",
+      "bytes": 2750248,
+      "end_id": 400000,
+      "generated_at": "2026-06-05T14:40:32.174169+00:00",
+      "index": "shard_000007.index.tsv",
+      "matrices": 343781,
+      "representatives": 50000,
+      "shard": 7,
+      "start_id": 350001
+    },
+    {
+      "bin": "shard_000008.bin",
+      "bytes": 2656856,
+      "end_id": 450000,
+      "generated_at": "2026-06-05T14:41:16.074270+00:00",
+      "index": "shard_000008.index.tsv",
+      "matrices": 332107,
+      "representatives": 50000,
+      "shard": 8,
+      "start_id": 400001
+    },
+    {
+      "bin": "shard_000009.bin",
+      "bytes": 2995104,
+      "end_id": 500000,
+      "generated_at": "2026-06-05T14:42:07.831640+00:00",
+      "index": "shard_000009.index.tsv",
+      "matrices": 374388,
+      "representatives": 50000,
+      "shard": 9,
+      "start_id": 450001
+    },
+    {
+      "bin": "shard_000010.bin",
+      "bytes": 2765888,
+      "end_id": 550000,
+      "generated_at": "2026-06-05T14:42:56.969741+00:00",
+      "index": "shard_000010.index.tsv",
+      "matrices": 345736,
+      "representatives": 50000,
+      "shard": 10,
+      "start_id": 500001
+    },
+    {
+      "bin": "shard_000011.bin",
+      "bytes": 2288936,
+      "end_id": 600000,
+      "generated_at": "2026-06-05T14:43:33.781037+00:00",
+      "index": "shard_000011.index.tsv",
+      "matrices": 286117,
+      "representatives": 50000,
+      "shard": 11,
+      "start_id": 550001
+    },
+    {
+      "bin": "shard_000012.bin",
+      "bytes": 2556448,
+      "end_id": 650000,
+      "generated_at": "2026-06-05T14:44:16.228915+00:00",
+      "index": "shard_000012.index.tsv",
+      "matrices": 319556,
+      "representatives": 50000,
+      "shard": 12,
+      "start_id": 600001
+    },
+    {
+      "bin": "shard_000013.bin",
+      "bytes": 310200,
+      "end_id": 657007,
+      "generated_at": "2026-06-05T14:44:22.050379+00:00",
+      "index": "shard_000013.index.tsv",
+      "matrices": 38775,
+      "representatives": 7007,
+      "shard": 13,
+      "start_id": 650001
+    }
+  ],
+  "small_generating_set": false,
+  "start_id": 1,
+  "totals": {
+    "bytes": 39102288,
+    "matrices": 4887786,
+    "representatives": 657007
+  }
+}
