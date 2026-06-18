@@ -25,6 +25,27 @@ SP8_ORDER = 47_377_612_800
 SP8_CLASSES = 657_007
 SP8_INCIDENT_LINES = 15_505_210
 SP8_REPRESENTATION = "faithful degree-120 permutation representation"
+SP8_NONSOLVABLE_CLASSES = 1_664
+SP8_NONABELIAN_SIMPLE_CLASSES = 49
+SP8_NONABELIAN_SIMPLE_TYPES = [
+    "A5",
+    "PSL(3,2)",
+    "A6",
+    "PSL(2,8)",
+    "PSL(2,17)",
+    "A7",
+    "PSL(2,16)",
+    "PSU(3,3)",
+    "A8",
+    "O(5,3)",
+    "A9",
+    "O(5,4)",
+    "O(7,2)",
+    "A10",
+    "O+(8,2)",
+    "O-(8,2)",
+    "O(9,2)",
+]
 FINGERPRINT_RE = re.compile(
     r"order=(?P<order>\d+);orbits=\[(?P<orbits>[^\]]*)\];gens=(?P<gens>\d+);solvable=(?P<solvable>true|false)"
 )
@@ -185,6 +206,15 @@ def markdown_count_table(rows: list[tuple[object, int]], key_name: str, *, limit
     return "\n".join(lines)
 
 
+def markdown_inline_code_list(items: list[str]) -> str:
+    if not items:
+        return ""
+    coded = [f"`{item}`" for item in items]
+    if len(coded) == 1:
+        return coded[0]
+    return ", ".join(coded[:-1]) + f", and {coded[-1]}"
+
+
 def write_readme(out_dir: Path, summary: dict, latest_name: str, latest: dict) -> None:
     order_rows = summary["top_orders"]
     readme = f"""# Subgroups of `Sp(8,2)`
@@ -208,10 +238,17 @@ classification certificate plus aggregate tables below.
 | Raw child backlog | {latest.get("raw_child_backlog", "")} |
 | Processed representatives | {fmt_int(latest.get("status_counts", {}).get("processed", 0))} |
 | Incidence records | {fmt_int(summary["incidence"].get("incidence_line_count", 0))} |
+| Nonsolvable classes scanned for simple groups | {fmt_int(SP8_NONSOLVABLE_CLASSES)} |
+| Nonabelian simple subgroup classes | {fmt_int(SP8_NONABELIAN_SIMPLE_CLASSES)} |
+| Nonabelian simple isomorphism types | {fmt_int(len(SP8_NONABELIAN_SIMPLE_TYPES))} |
 
 The computation used a faithful degree-120 permutation representation of
 `Sp(8,2)`, recursively processed maximal subgroups, and merged candidates by
 ambient conjugacy in `Sp(8,2)`.
+
+The nonabelian simple isomorphism types found among the subgroup classes are
+{markdown_inline_code_list(SP8_NONABELIAN_SIMPLE_TYPES)}. The last type is the
+ambient group itself.
 
 ## Tables
 
@@ -221,6 +258,9 @@ ambient conjugacy in `Sp(8,2)`.
 - [`solvable_counts.tsv`](solvable_counts.tsv): solvability split from the stored fingerprints.
 - [`orbit_pattern_counts.tsv`](orbit_pattern_counts.tsv): orbit-length patterns in the degree-120 action.
 - [`completion_certificate.json`](completion_certificate.json): machine-readable final snapshot and health checks.
+- [`simple_nonabelian_groups.md`](simple_nonabelian_groups.md): GAP-certified table of nonabelian simple subgroup types.
+- [`simple_nonabelian_representatives.tsv`](simple_nonabelian_representatives.tsv): representative ids for the 49 nonabelian simple classes.
+- [`non_solvable_simple_scan.tsv`](non_solvable_simple_scan.tsv): full GAP scan over the 1,664 nonsolvable classes.
 
 ## Largest Order Buckets
 

@@ -20,10 +20,18 @@ certificate plus the aggregate tables below.
 | Raw child backlog | 0 |
 | Processed representatives | 657,007 |
 | Incidence records | 15,505,210 |
+| Nonsolvable classes scanned for simple groups | 1,664 |
+| Nonabelian simple subgroup classes | 49 |
+| Nonabelian simple isomorphism types | 17 |
 
 The computation used a faithful degree-120 permutation representation of
 `Sp(8,2)`, recursively processed maximal subgroups, and merged candidates by
 ambient conjugacy in `Sp(8,2)`.
+
+The nonabelian simple isomorphism types found among the subgroup classes are
+`A5`, `PSL(3,2)`, `A6`, `PSL(2,8)`, `PSL(2,17)`, `A7`, `PSL(2,16)`,
+`PSU(3,3)`, `A8`, `O(5,3)`, `A9`, `O(5,4)`, `O(7,2)`, `A10`, `O+(8,2)`,
+`O-(8,2)`, and `O(9,2)`. The last type is the ambient group itself.
 
 ## Tables
 
@@ -33,6 +41,9 @@ ambient conjugacy in `Sp(8,2)`.
 - [`solvable_counts.tsv`](solvable_counts.tsv): solvability split from the stored fingerprints.
 - [`orbit_pattern_counts.tsv`](orbit_pattern_counts.tsv): orbit-length patterns in the degree-120 action.
 - [`completion_certificate.json`](completion_certificate.json): machine-readable final snapshot and health checks.
+- [`simple_nonabelian_groups.md`](simple_nonabelian_groups.md): GAP-certified table of nonabelian simple subgroup types.
+- [`simple_nonabelian_representatives.tsv`](simple_nonabelian_representatives.tsv): representative ids for the 49 nonabelian simple classes.
+- [`non_solvable_simple_scan.tsv`](non_solvable_simple_scan.tsv): full GAP scan over the 1,664 nonsolvable classes.
 
 ## Matrix Generators
 
