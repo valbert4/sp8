@@ -29,10 +29,34 @@ The computation used a faithful degree-120 permutation representation of
 `Sp(8,2)`, recursively processed maximal subgroups, and merged candidates by
 ambient conjugacy in `Sp(8,2)`.
 
-The nonabelian simple isomorphism types found among the subgroup classes are
-`A5`, `PSL(3,2)`, `A6`, `PSL(2,8)`, `PSL(2,17)`, `A7`, `PSL(2,16)`,
-`PSU(3,3)`, `A8`, `O(5,3)`, `A9`, `O(5,4)`, `O(7,2)`, `A10`, `O+(8,2)`,
-`O-(8,2)`, and `O(9,2)`. The last type is the ambient group itself.
+## Nonabelian Simple Subgroups
+
+A GAP scan of the 1,664 nonsolvable representatives found 49 nonabelian
+simple `Sp(8,2)`-conjugacy classes, spanning 17 abstract isomorphism types.
+The table gives the number of `Sp(8,2)`-classes of each type and the total
+number of actual subgroups in those classes, computed from the normalizer pass;
+together these classes account for 1,670,895,105 actual subgroups. The
+`O(9,2)` / `Sp(8,2)` row is the ambient group itself.
+
+| Simple group | Alias | Order | `Sp(8,2)`-classes | Actual subgroups | Representative ids |
+| --- | --- | ---: | ---: | ---: | --- |
+| A5 | - | 60 | 10 | 838,430,208 | `1871, 1872, 1873, 2094, 6810, 6811, 9452, 18865, 19195, 52578` |
+| PSL(3,2) | - | 168 | 6 | 564,019,200 | `3097, 3485, 3486, 3488, 9055, 656971` |
+| A6 | - | 360 | 5 | 78,231,552 | `576, 577, 3519, 7919, 20941` |
+| PSL(2,8) | - | 504 | 5 | 146,227,200 | `2581, 3270, 4538, 4539, 4845` |
+| PSL(2,17) | - | 2,448 | 1 | 19,353,600 | `11` |
+| A7 | - | 2,520 | 2 | 10,967,040 | `1047, 3006` |
+| PSL(2,16) | - | 4,080 | 2 | 5,806,080 | `809, 810` |
+| PSU(3,3) | - | 6,048 | 2 | 2,611,200 | `4127, 5427` |
+| A8 | - | 20,160 | 4 | 4,308,480 | `247, 248, 1251, 4835` |
+| O(5,3) | PSp(4,3) | 25,920 | 2 | 456,960 | `4891, 656999` |
+| A9 | - | 181,440 | 2 | 391,680 | `316, 656976` |
+| O(5,4) | Sp(4,4) | 979,200 | 1 | 24,192 | `59` |
+| O(7,2) | Sp(6,2) | 1,451,520 | 3 | 54,400 | `399, 400, 656977` |
+| A10 | - | 1,814,400 | 1 | 13,056 | `66` |
+| O+(8,2) | Omega+(8,2) | 174,182,400 | 1 | 136 | `656969` |
+| O-(8,2) | Omega-(8,2) | 197,406,720 | 1 | 120 | `656970` |
+| O(9,2) | Sp(8,2) | 47,377,612,800 | 1 | 1 | `1` |
 
 ## Tables
 
