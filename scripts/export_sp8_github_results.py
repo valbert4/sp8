@@ -10,6 +10,7 @@ and README text for the Sp(8,2) classification.
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 import os
 import re
@@ -200,7 +201,32 @@ def scan_failure_markers(run_dir: Path) -> dict[str, int | bool]:
     }
 
 
-def markdown_count_table(rows: list[tuple[object, int]], key_name: str, *, limit: int = 20) -> str:
+def read_subgroup_sums_by_order(out_dir: Path) -> Counter[int]:
+    path = out_dir / "subgroup_count_normalizers.tsv"
+    sums: Counter[int] = Counter()
+    if not path.exists():
+        return sums
+    with path.open(newline="") as f:
+        for row in csv.DictReader(f, delimiter="\t"):
+            sums[int(row["order"])] += int(row["conjugacy_class_size"])
+    return sums
+
+
+def markdown_count_table(
+    rows: list[tuple[object, int]],
+    key_name: str,
+    *,
+    limit: int = 20,
+    subgroup_sums_by_order: Counter[int] | None = None,
+) -> str:
+    if subgroup_sums_by_order:
+        lines = [f"| {key_name} | Conjugacy classes | Actual subgroups |", "| ---: | ---: | ---: |"]
+        for key, count in rows[:limit]:
+            actual = subgroup_sums_by_order.get(int(key))
+            actual_text = fmt_int(actual) if actual is not None else ""
+            lines.append(f"| {key} | {fmt_int(count)} | {actual_text} |")
+        return "\n".join(lines)
+
     lines = [f"| {key_name} | Conjugacy classes |", "| ---: | ---: |"]
     for key, count in rows[:limit]:
         lines.append(f"| {key} | {fmt_int(count)} |")
@@ -218,6 +244,7 @@ def markdown_inline_code_list(items: list[str]) -> str:
 
 def write_readme(out_dir: Path, summary: dict, latest_name: str, latest: dict) -> None:
     order_rows = summary["top_orders"]
+    subgroup_sums_by_order = read_subgroup_sums_by_order(out_dir)
     readme = f"""# Subgroups of `Sp(8,2)`
 
 This directory gives the GitHub-sized presentation of the completed
@@ -268,7 +295,7 @@ ambient group itself.
 
 ## Largest Order Buckets
 
-{markdown_count_table(order_rows, "Order")}
+{markdown_count_table(order_rows, "Order", subgroup_sums_by_order=subgroup_sums_by_order)}
 
 ## Total Subgroup Count
 
