@@ -25,6 +25,7 @@ SP8_ORDER = 47_377_612_800
 SP8_CLASSES = 657_007
 SP8_INCIDENT_LINES = 15_505_210
 SP8_REPRESENTATION = "faithful degree-120 permutation representation"
+SP8_TOTAL_SUBGROUPS = 12_671_226_847_329
 SP8_NONSOLVABLE_CLASSES = 1_664
 SP8_NONABELIAN_SIMPLE_CLASSES = 49
 SP8_NONABELIAN_SIMPLE_TYPES = [
@@ -238,6 +239,7 @@ classification certificate plus aggregate tables below.
 | Raw child backlog | {latest.get("raw_child_backlog", "")} |
 | Processed representatives | {fmt_int(latest.get("status_counts", {}).get("processed", 0))} |
 | Incidence records | {fmt_int(summary["incidence"].get("incidence_line_count", 0))} |
+| Total actual subgroups | {fmt_int(SP8_TOTAL_SUBGROUPS)} |
 | Nonsolvable classes scanned for simple groups | {fmt_int(SP8_NONSOLVABLE_CLASSES)} |
 | Nonabelian simple subgroup classes | {fmt_int(SP8_NONABELIAN_SIMPLE_CLASSES)} |
 | Nonabelian simple isomorphism types | {fmt_int(len(SP8_NONABELIAN_SIMPLE_TYPES))} |
@@ -258,6 +260,8 @@ ambient group itself.
 - [`solvable_counts.tsv`](solvable_counts.tsv): solvability split from the stored fingerprints.
 - [`orbit_pattern_counts.tsv`](orbit_pattern_counts.tsv): orbit-length patterns in the degree-120 action.
 - [`completion_certificate.json`](completion_certificate.json): machine-readable final snapshot and health checks.
+- [`subgroup_count_summary.md`](subgroup_count_summary.md): normalizer-pass summary for the total actual subgroup count.
+- [`subgroup_count_normalizers.tsv`](subgroup_count_normalizers.tsv): normalizer order and conjugacy-class size for every representative.
 - [`simple_nonabelian_groups.md`](simple_nonabelian_groups.md): GAP-certified table of nonabelian simple subgroup types.
 - [`simple_nonabelian_representatives.tsv`](simple_nonabelian_representatives.tsv): representative ids for the 49 nonabelian simple classes.
 - [`non_solvable_simple_scan.tsv`](non_solvable_simple_scan.tsv): full GAP scan over the 1,664 nonsolvable classes.
@@ -266,13 +270,12 @@ ambient group itself.
 
 {markdown_count_table(order_rows, "Order")}
 
-## Caveat
+## Total Subgroup Count
 
-The total number of actual subgroups of `Sp(8,2)` is not reported here.  The
-classification recorded one representative for each ambient conjugacy class.
-The total subgroup count would require a separate pass computing
-`|N_{{Sp(8,2)}}(H)|` for every representative `H` and summing
-`|Sp(8,2)| / |N_{{Sp(8,2)}}(H)|`.
+The actual subgroup count is computed from the conjugacy-class representatives
+by summing `|Sp(8,2)| / |N_{{Sp(8,2)}}(H)|` over all 657,007 representatives
+`H`. The completed normalizer pass gives {fmt_int(SP8_TOTAL_SUBGROUPS)} actual
+subgroups.
 
 ## Full Representatives
 

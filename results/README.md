@@ -20,6 +20,7 @@ certificate plus the aggregate tables below.
 | Raw child backlog | 0 |
 | Processed representatives | 657,007 |
 | Incidence records | 15,505,210 |
+| Total actual subgroups | 12,671,226,847,329 |
 | Nonsolvable classes scanned for simple groups | 1,664 |
 | Nonabelian simple subgroup classes | 49 |
 | Nonabelian simple isomorphism types | 17 |
@@ -41,6 +42,8 @@ The nonabelian simple isomorphism types found among the subgroup classes are
 - [`solvable_counts.tsv`](solvable_counts.tsv): solvability split from the stored fingerprints.
 - [`orbit_pattern_counts.tsv`](orbit_pattern_counts.tsv): orbit-length patterns in the degree-120 action.
 - [`completion_certificate.json`](completion_certificate.json): machine-readable final snapshot and health checks.
+- [`subgroup_count_summary.md`](subgroup_count_summary.md): normalizer-pass summary for the total actual subgroup count.
+- [`subgroup_count_normalizers.tsv`](subgroup_count_normalizers.tsv): normalizer order and conjugacy-class size for every representative.
 - [`simple_nonabelian_groups.md`](simple_nonabelian_groups.md): GAP-certified table of nonabelian simple subgroup types.
 - [`simple_nonabelian_representatives.tsv`](simple_nonabelian_representatives.tsv): representative ids for the 49 nonabelian simple classes.
 - [`non_solvable_simple_scan.tsv`](non_solvable_simple_scan.tsv): full GAP scan over the 1,664 nonsolvable classes.
@@ -91,13 +94,11 @@ python3 scripts/read_matrix_generators.py --matrix-dir results/matrix_generators
 | 8192 | 1,195 |
 | 576 | 893 |
 
-## Caveat
+## Total Subgroup Count
 
-The total number of actual subgroups of `Sp(8,2)` is not reported here.  The
-classification recorded one representative for each ambient conjugacy class.
-The total subgroup count would require a separate pass computing
-`|N_{Sp(8,2)}(H)|` for every representative `H` and summing
-`|Sp(8,2)| / |N_{Sp(8,2)}(H)|`.
+The actual subgroup count is computed from the conjugacy-class representatives
+by summing `|Sp(8,2)| / |N_{Sp(8,2)}(H)|` over all 657,007 representatives
+`H`. The completed normalizer pass gives 12,671,226,847,329 actual subgroups.
 
 ## Full Representatives
 
