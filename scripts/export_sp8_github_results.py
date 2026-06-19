@@ -290,7 +290,7 @@ ambient group itself.
 - [`subgroup_count_summary.md`](subgroup_count_summary.md): normalizer-pass summary for the total actual subgroup count.
 - [`subgroup_count_normalizers.tsv`](subgroup_count_normalizers.tsv): normalizer order and conjugacy-class size for every representative.
 - [`simple_nonabelian_groups.md`](simple_nonabelian_groups.md): GAP-certified table of nonabelian simple subgroup types.
-- [`simple_nonabelian_representatives.tsv`](simple_nonabelian_representatives.tsv): representative ids for the 49 nonabelian simple classes.
+- [`simple_nonabelian_representatives.tsv`](simple_nonabelian_representatives.tsv): per-representative normalizer, orbit, and incidence data for the 49 nonabelian simple classes.
 - [`non_solvable_simple_scan.tsv`](non_solvable_simple_scan.tsv): full GAP scan over the 1,664 nonsolvable classes.
 
 ## Largest Order Buckets
